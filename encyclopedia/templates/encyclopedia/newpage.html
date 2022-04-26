@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create a New Page
+{% endblock %}
+
+{% block body %}
+    <h1>Create a New Page</h1>
+
+    {% if entry %}
+        <p>
+            An entry for "{{ entry }}" already exists. You can read and edit that entry <a href="wiki/{{ entry }}" title="{{ entry }}">here</a>.
+            <br>
+            Alternatively, you can write an entry for a different topic by editing the form below.
+        </p>
+    {% endif %}
+
+    <form class="form-horizontal" action="newpage" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">{{ form.as_p }}</div>
+        
+        <p><button type="submit" class="btn btn-primary">Create Page</button></p>
+    </form>
+
+{% endblock %}

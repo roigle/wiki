@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+    margin-bottom: 20px; /* added by me */
+}
+
+textarea {
+    height: 50vh !important;
+    /* width: 80%; -- deleted by me (bc it's below in .formwidth */
+}
+
+.main {
+    padding: 10px;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    background-color: #f0f0f0;
+    /* height: 100vh; */
+    height: 200vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
+
+/* added by me */
+
+.editlink {
+    float: right;
+    padding-right: 100px;
+    padding-top: 20px;
+}
+
+.formwidth {
+    width: 80%;
+}

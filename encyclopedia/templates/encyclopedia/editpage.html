@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Page
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Page</h1>
+
+    <p>
+        You are about to edit the entry for "{{ title }}". Please bear in mind the rules for a Markdown file.
+        <br>
+        Once you have finished editing, save the changes by clicking the button below.
+    </p>
+
+    <form class="form-horizontal" action="newpage" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <p><label>Title:</label><input type="text" name="title" value="{{ title }}" class="form-control formwidth" required></p>
+            <p><label>Markdown text:</label><textarea name="text" class="form-control formwidth" required>{{ text }}</textarea></p>
+        </div>
+        
+        <p><button type="submit" class="btn btn-primary">Save Changes</button></p>
+    </form>
+
+{% endblock %}

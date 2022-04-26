@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {% if text %}
+        <div>
+            <p class="editlink">[ <a href="{% url 'editpage' title %}" title="Edit">Edit</a> ]</p>
+            {{ text|safe }}
+        </div>
+    {% else %}
+        <div>
+            <h1>Page Not Found</h1>
+            <p>Sorry, the page you're looking for doesn't exist. Go back to the <a href="{% url 'index' %}" title="Home">Homepage</a> to see a list of the existing entries.</p>
+        </div>
+    {% endif %}
+{% endblock %}
